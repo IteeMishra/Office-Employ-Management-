@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Filter Employee Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body style="width: 100%; background-color: #121212; color: white;">
+    <header  style="display:flex; align-items: center; justify-content:center ; background-color: white; height: 50px; margin-bottom: 20px; border-radius:20px; width: 90%; margin-left:5%; margin-right:5%; margin-top: 15px;">
+      <div> 
+        <style>
+          a{
+           
+            font-size: 20px;
+            margin: 10px 10px 10px 10px;
+            text-decoration:none;
+            color: black;
+            font-family: ui-serif ;
+            font-weight: 800;
+
+          }
+          a:hover{
+            color: red;
+          
+           
+          }
+          
+        </style>
+        <a href="/">Home</a>
+        <a href="/view_emp"> View Employ Details</a>
+        <a href="/add_emp">Add Employ</a>
+        <a href="/del_emp">Remove Employment </a>
+        <a href="/fil_emp">Filter Employ </a>
+       
+      </div>
+    </header>
+    <h1 style="
+    margin: 20px 0 20px 0;"><center>Filter Employee Details </center></h1>
+    <hr>
+    <form action="/fil_emp" method="post" >
+      {% csrf_token %} 
+    <style>
+    label{
+       font-weight: bold;
+
+     }
+     form{
+       width: 60%;
+       height: 80%;
+       margin-left: 20%;
+       margin-top: 20px;
+       padding: 10px 10px 10px 10px;
+       border-radius: 7px;
+      background-color: #363636;
+     }
+     input{
+       width: 100%;
+       border-radius:12px;
+       height:45px;
+     }
+   </style>
+       <label for="name"  >First Name/Last name</label>
+       <input type="text" id="name"  name="name" placeholder="Enter name" value="{{ first_name }}">
+     
+     <br>
+     <br>
+      
+       <label for="role" >Role Name </label>
+       <input type="text"name="role" value="{{ role }}" id="role" placeholder="enter role">
+<br>
+<br>
+       <label for="dept" >Department name/Location</label>
+       <input type="text" name="dept" id="dept" value="{{ dept }}" placeholder="enter department">
+<br>
+   <br>
+     <button type="submit" class="btn btn-primary">Filter Information</button>
+  
+   </form> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
